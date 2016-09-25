@@ -1,0 +1,155 @@
+<!--
+ 
+ There are very few good data visualization libraries for Swift, so I used Chart.js through
+ a UIWebView, which of course came with its own challenges, but we were at least able to 
+ have something graphed
+ 
+ -->
+
+<!doctype html>
+<html lang="eng-US">
+    <head>
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    
+    	<style type="text/css">
+	    	.container {
+			  width: 100%;
+			  height: 400%;
+			  margin: 2% auto;
+			  padding-top: 20%;
+			}
+
+			.p {
+			  text-align: center;
+			  font-size: 14px;
+			  padding-top: 14px;
+			}
+		</style>
+    
+    </head>
+    <body>
+		<div class="container">
+		  <!-- <h2>Chart.js Responsive Line Chart Demo</h2> -->
+		  <div>
+		    <canvas id="canvas" colours="colours"></canvas>
+		  </div>
+		</div>
+		
+    	<script type="text/javascript">
+    		/* global lineChartData */
+    		var lineChartData = {
+                //psosible time range
+			    labels: ["-2yrs", "-1.5yr", "-1yr", "-0.5yr", "Today", "0.5yr", "1yr"],
+			    datasets: [{
+                    //actual data
+			    	label: null,
+			        fill: true,
+		            lineTension: 0.1,
+		            backgroundColor: "rgba(0,0,0,0.4)",
+		            borderColor: "rgba(0,0,0,1)",
+		            borderCapStyle: 'butt',
+		            borderDash: [],
+		            borderDashOffset: 0.0,
+		            borderJoinStyle: 'miter',
+		            pointBorderColor: "rgba(75,192,192,1)",
+		            pointBackgroundColor: "#fff",
+		            pointBorderWidth: 1,
+		            pointHoverRadius: 5,
+		            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+		            pointHoverBorderColor: "rgba(220,220,220,1)",
+		            pointHoverBorderWidth: 2,
+		            pointRadius: 1,
+		            pointHitRadius: 10,
+			        data: [20, 30, 80, 20, 40, null, null] //after present, real data unknown
+			    }, {
+                    // prediction
+			    	label: null,
+			        fill: true,
+		            lineTension: 0.1,
+		            backgroundColor: "rgba(0,0,255,0.4)",
+		            borderColor: "rgba(0,0,255,1)",
+		            borderCapStyle: 'butt',
+		            borderDash: [],
+		            borderDashOffset: 0.0,
+		            borderJoinStyle: 'miter',
+		            pointBorderColor: "rgba(0,0,255,1)",
+		            pointBackgroundColor: "#fff",
+		            pointBorderWidth: 1,
+		            pointHoverRadius: 5,
+		            pointHoverBackgroundColor: "rgba(0,0,255,1)",
+		            pointHoverBorderColor: "rgba(220,220,220,1)",
+		            pointHoverBorderWidth: 2,
+		            pointRadius: 1,
+		            pointHitRadius: 10,
+		            fillColor : "rgba(0,0,255,0.4)",
+			        data: [null, null, null, null, 40, 30, 20]  //this would be prediction data
+			    }]
+			}
+			/* global Chart */
+			Chart.defaults.global.animationSteps = 50;
+			Chart.defaults.global.tooltipYPadding = 16;
+			Chart.defaults.global.tooltipCornerRadius = 0;
+			Chart.defaults.global.tooltipTitleFontStyle = "normal";
+			Chart.defaults.global.tooltipFillColor = "rgba(0,160,0,0.8)";
+			Chart.defaults.global.animationEasing = "easeOutBounce";
+			Chart.defaults.global.responsive = true;
+			Chart.defaults.global.scaleLineColor = "black";
+			Chart.defaults.global.scaleFontSize = 16;
+
+			/* global data */
+			var data = {
+    			type: "line",
+    			data: lineChartData,
+    			options: {
+    				pointDotRadius: 10,
+				    bezierCurve: false,
+				    scaleShowVerticalLines: false,
+				    scaleGridLineColor: "black",
+				    scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:true
+			                }
+			            }]
+        			},
+                    legend: {
+                        display: false,
+                        position: "bottom",
+                        labels: {
+                            boxWidth: 20
+                        }
+                    }
+    			}
+    		};
+            //plotting the chart
+			var ctx = document.getElementById("canvas").getContext("2d");
+			var LineChartDemo = new Chart(ctx , data);
+    	</script>
+    	<script type="text/javascript">
+            //helper function that was designed to update legend on chart when new stock was selected in picker
+    		function updateStock(pickerChoice) {
+    			switch pickerChoice {
+    				case 0:
+    					lineChartData.datasets[0].label = "AAPL";
+    					var ctx = document.getElementById("canvas").getContext("2d");
+						var LineChartDemo = new Chart(ctx , data);
+    					return "called0";
+    				case 1:
+    					lineChartData.datasets[0].label = "GOOG";
+    					var ctx = document.getElementById("canvas").getContext("2d");
+						var LineChartDemo = new Chart(ctx , data);
+    					return "called1";
+    				case 2:
+    					lineChartData.datasets[0].label = "PSTG";
+    					var ctx = document.getElementById("canvas").getContext("2d");
+						var LineChartDemo = new Chart(ctx , data);
+    					return "called1";
+    				default:
+    					lineChartData.datasets[0].label = "AAPL";
+    					return "calledDef";
+    			}
+    		}
+    	</script>
+    </body>
+</html>

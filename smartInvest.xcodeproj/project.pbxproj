@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		0500B6D21D968459006C2902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500B6D11D968459006C2902 /* AppDelegate.swift */; };
-		0500B6D41D968459006C2902 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500B6D31D968459006C2902 /* ViewController.swift */; };
+		0500B6D41D968459006C2902 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500B6D31D968459006C2902 /* LoginController.swift */; };
 		0500B6D71D968459006C2902 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0500B6D51D968459006C2902 /* Main.storyboard */; };
 		0500B6DA1D968459006C2902 /* smartInvest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0500B6D81D968459006C2902 /* smartInvest.xcdatamodeld */; };
 		0500B6DC1D968459006C2902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0500B6DB1D968459006C2902 /* Assets.xcassets */; };
 		0500B6DF1D968459006C2902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0500B6DD1D968459006C2902 /* LaunchScreen.storyboard */; };
+		0500B6E71D968AA7006C2902 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500B6E61D968AA7006C2902 /* DashboardController.swift */; };
+		0500B7081D96FE77006C2902 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500B7071D96FE77006C2902 /* DataViewController.swift */; };
+		0500B70A1D9727F7006C2902 /* charts.html in Resources */ = {isa = PBXBuildFile; fileRef = 0500B7091D9727F7006C2902 /* charts.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0500B6CE1D968459006C2902 /* smartInvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartInvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0500B6D11D968459006C2902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0500B6D31D968459006C2902 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0500B6D31D968459006C2902 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		0500B6D61D968459006C2902 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0500B6D91D968459006C2902 /* smartInvest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smartInvest.xcdatamodel; sourceTree = "<group>"; };
 		0500B6DB1D968459006C2902 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0500B6DE1D968459006C2902 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0500B6E01D968459006C2902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0500B6E61D968AA7006C2902 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		0500B7071D96FE77006C2902 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		0500B7091D9727F7006C2902 /* charts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = charts.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				0500B6D11D968459006C2902 /* AppDelegate.swift */,
-				0500B6D31D968459006C2902 /* ViewController.swift */,
+				0500B6D31D968459006C2902 /* LoginController.swift */,
+				0500B7071D96FE77006C2902 /* DataViewController.swift */,
+				0500B7091D9727F7006C2902 /* charts.html */,
+				0500B6E61D968AA7006C2902 /* DashboardController.swift */,
 				0500B6D51D968459006C2902 /* Main.storyboard */,
 				0500B6DB1D968459006C2902 /* Assets.xcassets */,
 				0500B6DD1D968459006C2902 /* LaunchScreen.storyboard */,
@@ -129,6 +138,7 @@
 				0500B6DF1D968459006C2902 /* LaunchScreen.storyboard in Resources */,
 				0500B6DC1D968459006C2902 /* Assets.xcassets in Resources */,
 				0500B6D71D968459006C2902 /* Main.storyboard in Resources */,
+				0500B70A1D9727F7006C2902 /* charts.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0500B6E71D968AA7006C2902 /* DashboardController.swift in Sources */,
 				0500B6DA1D968459006C2902 /* smartInvest.xcdatamodeld in Sources */,
-				0500B6D41D968459006C2902 /* ViewController.swift in Sources */,
+				0500B7081D96FE77006C2902 /* DataViewController.swift in Sources */,
+				0500B6D41D968459006C2902 /* LoginController.swift in Sources */,
 				0500B6D21D968459006C2902 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
